@@ -1,0 +1,12 @@
+@import './styles/vars.css';
+
+.app {
+  background-color: var(--white);
+  width: calc(100% - 2.8rem);
+  margin: 0 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}

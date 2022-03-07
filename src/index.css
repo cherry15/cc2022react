@@ -1,0 +1,99 @@
+@import './styles/vars.css';
+
+body {
+  font-family: var(--font);
+  color: var(--fontColor);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-size: .8rem;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--red);
+  margin: 1rem 0;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-size: 1.2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: var(--blue);
+}
+
+a:hover,
+a:active {
+  color: var(--orange);
+}
+
+p {
+  margin: 0;
+}
+
+.input {
+  border: none;
+  background: var(--lightGrey);
+  padding: 1rem 0.5rem;
+  border-radius: .3rem;
+  width: 100%;
+  outline: none;
+  font-size: .8rem;
+}
+
+.label {
+  display: block;
+}
+
+.error-message {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 .8rem;
+  background: #d30909;
+  color: #fff;
+}
+
+.error-message:empty {
+  opacity: 0;
+}

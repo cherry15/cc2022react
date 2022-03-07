@@ -1,0 +1,35 @@
+@import '../../styles/vars.css';
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-link {
+  color: var(--blue);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.nav-link.active,
+.nav-link:hover,
+.nav-link.active:active,
+.nav-link.active:visited {
+  color: var(--yellow);
+}
+
+.nav-link.logo {
+  padding: 0;
+  display: flex;
+  height: 3.6rem;
+  width: 3.6rem;
+  background-color: transparent;
+  background-image: url(./logo.svg);
+}
+
+.nav-link.logo.active,
+.nav-link.logo:hover {
+  background-color: var(--yellow);
+}

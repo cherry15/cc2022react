@@ -1,0 +1,11 @@
+@import '../../styles/vars.css';
+
+footer {
+  height: 8rem;
+  background-color: var(--blue);
+  width: 100%;
+  overflow: hidden;
+  padding: .8rem 1.4rem;
+  color: var(--white);
+}
+  

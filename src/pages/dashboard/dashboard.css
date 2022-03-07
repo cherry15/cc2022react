@@ -1,0 +1,11 @@
+.dashboard-button-container {
+	align-self: flex-start;
+	width: 100%;
+	margin: .8rem 0;
+}
+
+@media screen and (min-width: 667px) {
+	.dashboard-button-container {
+		width: auto;
+	}
+}

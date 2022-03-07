@@ -1,0 +1,36 @@
+@import '../../styles/vars.css';
+
+.home {
+  font-size: 1.6rem;
+  max-width: 56rem;
+}
+
+.home q {
+  margin: 0;
+}
+
+.home q::before {
+  content: none;
+}
+.home q::after {
+  content: none;
+}
+
+.home .citation {
+  font-size: .6rem;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+@media screen and (min-width: 667px) {
+  .home {
+    font-size: 1.4rem;
+    max-width: 40rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .home {
+    font-size: 2rem;
+  }
+}

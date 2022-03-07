@@ -1,0 +1,23 @@
+@import '../../styles/vars.css';
+
+.employee-form {
+  width: 100%;
+  background-color: var(--white);
+}
+
+.employee-form .label {
+  margin-top: 1rem;
+}
+
+.employee-form .label:first-child {
+  margin-top: 0;
+}
+
+.employee-form .error {
+  display: block;
+  background: var(--dangerBackgroundColor);
+  color: var(--dangerForegroundColor);
+  padding: .8rem 1.4rem;
+}
+
+

@@ -1,0 +1,29 @@
+@import '../../styles/vars.css';
+
+.outerContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+}
+
+.container {
+  width: 2rem;
+  height: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.circle {
+  display: block;
+  width: .5rem;
+  height: .5rem;
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+.outerContainer > span {
+  display: block;
+  padding-right: .2rem;
+}

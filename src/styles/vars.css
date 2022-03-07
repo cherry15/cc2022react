@@ -1,0 +1,31 @@
+:root {
+  --font: 'Raleway', sans-serif;
+  --blue: #00b9ff;
+  --pink: #DDA0DD;
+  --gold: #DAA520;
+  --orange: #FF7C44;
+  --red: #4E002D;
+  --white: white;
+  --black: black;
+  --green: #4ca952;
+  --yellow: yellow;
+
+  --themeColor: beige;
+  --fontColor: DarkSlateGray;
+
+  --lightGrey: #e1e5ea;
+  --grey: #dddddd;
+  --successBackgroundColor: #d4edda;
+  --successForegroundColor: #155724;
+  --infoBackgroundColor: #cce5ff;
+  --infoForegroundColor: #004085;
+  --dangerBackgroundColor: #f8d7da;
+  --dangerForegroundColor: #711c24;
+
+  --cardShadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  --cardShadowHover: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  --cardTransition: 0.3s;
+
+  --tablet: 768px;
+  --desktop: 1024px;
+}

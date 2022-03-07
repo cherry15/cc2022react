@@ -1,0 +1,54 @@
+@import '../../styles/vars.css';
+
+.wrapper {
+  background: var(--white);
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  animation-duration: 500ms;
+  animation-name: slidein;
+}
+
+.content {
+  padding: 1.4rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+section {
+  margin: 1.4rem 0;
+}
+
+.backDrop {
+  background: rgba(63, 61, 61, 0.692);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  cursor: pointer;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .wrapper {
+    width: 66%;
+  }
+}

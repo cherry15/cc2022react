@@ -1,0 +1,10 @@
+@import '../../styles/vars.css';
+
+header {
+  width: 100%;
+  background-color: var(--red);
+  position: sticky;
+  z-index: 8;
+  top: 0;
+  overflow: hidden;
+}

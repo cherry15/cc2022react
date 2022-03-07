@@ -1,0 +1,58 @@
+@import '../../styles/vars.css';
+
+.button {
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  padding: .8rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.button:hover,
+.button.default:hover,
+.button.cancel:hover,
+.button.go:hover
+ {
+  background-color: var(--gold);
+}
+
+.button.default {
+  background-color: var(--blue);
+}
+
+.button.cancel {
+  background-color: var(--red);
+}
+
+.button.go {
+  background-color: var(--green);
+}
+
+.button.delete {
+  padding: 0;
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: .4rem;
+  right: .4rem;
+  background: url(./close.svg) transparent no-repeat;
+}
+
+.button.delete:hover {
+  background-color: var(--white);
+}
+
+@media screen and (min-width: 667px) {
+  .button {
+    width: 10rem;
+  }
+}
+
