@@ -2,8 +2,14 @@ import { fireEvent, screen } from '@testing-library/react'
 import { renderWithProviders } from '../../test/test-utils'
 import Dashboard from './dashboard'
 
+window.scrollTo = jest.fn()
+
+afterAll(() => {
+  jest.clearAllMocks()
+})
+
 describe('Dashboard', () => {
-  it('gets the employees', async () => {
+  test('gets the employees', async () => {
     renderWithProviders(<Dashboard />)
 
     await screen.findByRole('heading', { name: /Ada Lovelace/i })
@@ -17,14 +23,14 @@ describe('Dashboard', () => {
     )
   })
 
-  it('clicking on the add employee button shows the add employee form', async () => {
+  test('clicking on the add employee button shows the add employee form', async () => {
     renderWithProviders(<Dashboard />)
     fireEvent.click(screen.getByText('Add employee'))
 
     expect(screen.getByLabelText(/Name/)).toBeDefined()
   })
 
-  it('clicking on the cancel button hides the add employee form', async () => {
+  test('clicking on the cancel button hides the add employee form', async () => {
     renderWithProviders(<Dashboard />)
     fireEvent.click(screen.getByText('Add employee'))
     fireEvent.click(screen.getByText('Cancel'))

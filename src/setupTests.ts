@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { server } from './test/server'
+import { server } from './mocks/server'
 
 process.env.DEBUG_PRINT_LIMIT = '15000'
 

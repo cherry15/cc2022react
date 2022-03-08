@@ -3,10 +3,17 @@ import EmployeeList from './employee-list'
 import { renderWithProviders } from '../../test/test-utils'
 import EmployeeDetail from './employee-detail'
 import { EmployeeMessages } from './employee-messages'
-import { useDeleteEmployeeMutation } from './employees-api'
+import { server } from '../../mocks/server'
+import { getEmloyeesException } from '../../mocks/handlers'
+
+window.scrollTo = jest.fn()
+
+afterAll(() => {
+  jest.clearAllMocks()
+})
 
 describe('EmployeeList', () => {
-  it('gets the employees', async () => {
+  test('gets the employees', async () => {
     renderWithProviders(<EmployeeList />)
 
     await screen.findByRole('heading', { name: /Ada Lovelace/i })
@@ -22,20 +29,20 @@ describe('EmployeeList', () => {
 })
 
 describe('EmployeeDetail', () => {
-  it('returns an employee when the employee exists', async () => {
+  test('returns an employee when the employee exists', async () => {
     renderWithProviders(<EmployeeDetail id={'2'} />)
     await screen.findByRole('heading', { name: /Kathe Kollwitz/i })
     expect(screen.getByText(/Kathe Kollwitz/)).toBeDefined()
   })
 
-  it('returns an error when the employee does not exist', async () => {
+  test('returns an error when the employee does not exist', async () => {
     renderWithProviders(<EmployeeDetail id={'100'} />)
     await screen.findByText(EmployeeMessages.employeeNotFound)
   })
 })
 
 describe('Delete employee', () => {
-  it('clicking on the delete employee button shows the confirm delete modal', async () => {
+  test('clicking on the delete employee button shows the confirm delete modal', async () => {
     renderWithProviders(<EmployeeList />)
     await screen.findByRole('heading', { name: /Ada Lovelace/i })
     await screen.findAllByRole('button', { name: 'Delete employee' })
@@ -45,7 +52,7 @@ describe('Delete employee', () => {
     expect(screen.getByText(/Are you sure you want to delete the employee/)).toBeDefined()
   })
 
-  it('clicking on the cancel button hides the confirm delete modal', async () => {
+  test('clicking on the cancel button hides the confirm delete modal', async () => {
     renderWithProviders(<EmployeeList />)
     await screen.findByRole('heading', { name: /Ada Lovelace/i })
     await screen.findAllByRole('button', { name: 'Delete employee' })
@@ -57,7 +64,7 @@ describe('Delete employee', () => {
     expect(screen.queryByText(/Are you sure you want to delete the employee/)).toBeNull()
   })
 
-  it('clicking on the OK button deletes the employee', async () => {
+  test('clicking on the OK button deletes the employee', async () => {
     renderWithProviders(<EmployeeList />)
     await screen.findByRole('heading', { name: /Ada Lovelace/i })
     await screen.findAllByRole('button', { name: 'Delete employee' })
@@ -69,5 +76,18 @@ describe('Delete employee', () => {
     expect(screen.queryByText(/Are you sure you want to delete the employee/)).toBeNull()
     await screen.findByRole('heading', { name: /Kathe Kollwitz/i })
     // expect(screen.queryByText(/Ada Lovelace/)).toBeNull()
+  })
+})
+
+describe('Bad network', () => {
+  test('shows error', async() => {
+    server.use(getEmloyeesException);
+    renderWithProviders(<EmployeeList />)
+
+    const errorDisplay = await screen.findByText(EmployeeMessages.serverError)
+    expect(errorDisplay).toBeInTheDocument()
+
+    const displayedEmployees = screen.queryAllByTestId(/employee-id-\d+/)
+    expect(displayedEmployees).toEqual([])
   })
 })

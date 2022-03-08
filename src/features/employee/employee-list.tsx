@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Loading from '../loading/loading'
 import styles from '../../styles/container.module.css'
 import { Employee, useDeleteEmployeeMutation, useEmployeesQuery } from './employees-api'
@@ -11,6 +11,12 @@ const EmployeeList = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedEmployee, setSelectedEmployee] = useState(null)
   const [deleteEmployee] = useDeleteEmployeeMutation()
+
+  useEffect(() => {
+    return () => {
+      setSelectedEmployee(null)
+    }
+  }, [])
 
   const onOpenModal = (event: React.MouseEvent<HTMLInputElement>, employee: Employee): void => {
     event.preventDefault()
