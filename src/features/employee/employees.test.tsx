@@ -68,11 +68,12 @@ describe('Delete employee modal', () => {
 describe('Delete employee', () => {
   test('clicking on the OK button deletes the employee', async () => {
     renderWithProviders(<EmployeeList />)
-    await screen.findByRole('heading', { name: /Ada Lovelace/i })
+    await screen.findByRole('heading', { name: /ada lovelace/i })
     await screen.findAllByRole('button', { name: 'Delete employee' })
 
     fireEvent.click(screen.getAllByRole('button', { name: 'Delete employee' })[0])
     fireEvent.click(await screen.findByText('OK'))
+    // expect(screen.getByText(/ada lovelace/i)).not.toBeInTheDocument()
   })
 })
 
