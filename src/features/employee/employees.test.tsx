@@ -65,6 +65,17 @@ describe('Delete employee modal', () => {
   })
 })
 
+describe('Delete employee', () => {
+  test('clicking on the OK button deletes the employee', async () => {
+    renderWithProviders(<EmployeeList />)
+    await screen.findByRole('heading', { name: /Ada Lovelace/i })
+    await screen.findAllByRole('button', { name: 'Delete employee' })
+
+    fireEvent.click(screen.getAllByRole('button', { name: 'Delete employee' })[0])
+    fireEvent.click(await screen.findByText('OK'))
+  })
+})
+
 describe('Bad network', () => {
   test('shows error', async() => {
     server.use(getEmloyeesException);
@@ -73,7 +84,7 @@ describe('Bad network', () => {
     const errorDisplay = await screen.findByText(EmployeeMessages.serverError)
     expect(errorDisplay).toBeInTheDocument()
 
-    const displayedEmployees = screen.queryAllByRole('h3');
+    const displayedEmployees = screen.queryAllByRole('heading');
     expect(displayedEmployees).toEqual([]);
   })
 })
