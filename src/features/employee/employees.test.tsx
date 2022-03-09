@@ -72,5 +72,8 @@ describe('Bad network', () => {
 
     const errorDisplay = await screen.findByText(EmployeeMessages.serverError)
     expect(errorDisplay).toBeInTheDocument()
+
+    const displayedEmployees = screen.queryAllByRole('h3');
+    expect(displayedEmployees).toEqual([]);
   })
 })
