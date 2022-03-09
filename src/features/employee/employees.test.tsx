@@ -41,7 +41,7 @@ describe('EmployeeDetail', () => {
   })
 })
 
-describe('Delete employee', () => {
+describe('Delete employee modal', () => {
   test('clicking on the delete employee button shows the confirm delete modal', async () => {
     renderWithProviders(<EmployeeList />)
     await screen.findByRole('heading', { name: /Ada Lovelace/i })
@@ -63,20 +63,6 @@ describe('Delete employee', () => {
     fireEvent.click(screen.getByText('Cancel'))
     expect(screen.queryByText(/Are you sure you want to delete the employee/)).toBeNull()
   })
-
-  test('clicking on the OK button deletes the employee', async () => {
-    renderWithProviders(<EmployeeList />)
-    await screen.findByRole('heading', { name: /Ada Lovelace/i })
-    await screen.findAllByRole('button', { name: 'Delete employee' })
-
-    fireEvent.click(screen.getAllByRole('button', { name: 'Delete employee' })[0])
-
-    expect(screen.getByText(/Are you sure you want to delete the employee/)).toBeDefined()
-    fireEvent.click(screen.getByText('OK'))
-    expect(screen.queryByText(/Are you sure you want to delete the employee/)).toBeNull()
-    await screen.findByRole('heading', { name: /Kathe Kollwitz/i })
-    // expect(screen.queryByText(/Ada Lovelace/)).toBeNull()
-  })
 })
 
 describe('Bad network', () => {
@@ -86,8 +72,5 @@ describe('Bad network', () => {
 
     const errorDisplay = await screen.findByText(EmployeeMessages.serverError)
     expect(errorDisplay).toBeInTheDocument()
-
-    const displayedEmployees = screen.queryAllByTestId(/employee-id-\d+/)
-    expect(displayedEmployees).toEqual([])
   })
 })
