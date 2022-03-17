@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It uses MSW in the browser and also in node for testing purposes. I've experimented with putting the components in a features folder and 
+the views in a pages folder, the unit tests live alongside the feature that uses them. It demonstrates the use of RTK Query with typescript
+and unit tests. It also has some form validation and a number of other features.
 
 ## Available Scripts
 
