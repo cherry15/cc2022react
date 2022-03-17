@@ -68,3 +68,78 @@ describe('Adding an employee, happy path', () => {
     expect(newEmployee).toBeInTheDocument()
   })
 })
+
+describe('Adding an employee, unhappy path', () => {
+  test('clicking on the OK button does NOT add the employee when there is no name', async () => {
+    renderWithProviders(<Dashboard />)
+    fireEvent.click(screen.getByText('Add employee'))
+    const employee: Employee = {
+      name: 'Ellie Collier',
+      jobType: 'Engineer',
+      email: 't@test.com'
+    }
+
+    const jobTypeInput = screen.getByLabelText(/job type/i)
+    fireEvent.change(jobTypeInput, { target: { value: employee.jobType } })
+
+    const emailInput = screen.getByLabelText(/email/i)
+    fireEvent.change(emailInput, { target: { value: employee.email } })
+
+    fireEvent.click(screen.getByText('OK'))
+
+    const errorDisplay = await screen.findByText('Name is required')
+    expect(errorDisplay).toBeInTheDocument()
+    expect(screen.queryByText(employee.name)).toBeNull()
+  })
+})
+
+describe('Adding an employee, unhappy path', () => {
+  test('clicking on the OK button does NOT add the employee when there is no email', async () => {
+    renderWithProviders(<Dashboard />)
+    fireEvent.click(screen.getByText('Add employee'))
+    const employee: Employee = {
+      name: 'Ellie Collier',
+      jobType: 'Engineer',
+      email: 't@test.com'
+    }
+
+    const nameInput = screen.getByLabelText(/name/i)
+    fireEvent.change(nameInput, { target: { value: employee.name } })
+
+    const jobTypeInput = screen.getByLabelText(/job type/i)
+    fireEvent.change(jobTypeInput, { target: { value: employee.jobType } })
+
+    fireEvent.click(screen.getByText('OK'))
+
+    const errorDisplay = await screen.findByText('Email is required and must be valid')
+    expect(errorDisplay).toBeInTheDocument()
+    expect(screen.queryByText(employee.name)).toBeNull()
+  })
+})
+
+describe('Adding an employee, unhappy path', () => {
+  test('clicking on the OK button does NOT add the employee when the email is invalid', async () => {
+    renderWithProviders(<Dashboard />)
+    fireEvent.click(screen.getByText('Add employee'))
+    const employee: Employee = {
+      name: 'Ellie Collier',
+      jobType: 'Engineer',
+      email: 'test.com'
+    }
+
+    const nameInput = screen.getByLabelText(/name/i)
+    fireEvent.change(nameInput, { target: { value: employee.name } })
+
+    const jobTypeInput = screen.getByLabelText(/job type/i)
+    fireEvent.change(jobTypeInput, { target: { value: employee.jobType } })
+
+    const emailInput = screen.getByLabelText(/email/i)
+    fireEvent.change(emailInput, { target: { value: employee.email } })
+
+    fireEvent.click(screen.getByText('OK'))
+
+    const errorDisplay = await screen.findByText('Email is required and must be valid')
+    expect(errorDisplay).toBeInTheDocument()
+    expect(screen.queryByText(employee.name)).toBeNull()
+  })
+})
