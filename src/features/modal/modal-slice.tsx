@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { RootState } from '../../app/store'
 
 interface ShowModalState {
   isOpen: boolean
@@ -19,5 +20,7 @@ export const showModalSlice = createSlice({
 })
 
 export const { show } = showModalSlice.actions
+
+export const selectModal = (state: RootState) => state.showModal.isOpen
 
 export default showModalSlice.reducer

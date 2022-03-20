@@ -1,6 +1,6 @@
 @import '../../styles/vars.css';
 
-.wrapper {
+.modalWrapper {
   background: var(--white);
   width: 90%;
   position: absolute;
@@ -9,27 +9,32 @@
   z-index: 10;
   height: 100%;
   animation-duration: 500ms;
-  animation-name: slidein;
+  animation-name: slideIn;
 }
 
-.content {
-  padding: 1.4rem;
+.modalHeader,
+.modalBody,
+.modalFooter {
+	padding: 1rem;
+	margin: 0;
 }
 
-.buttonContainer {
+.modalFooter {
   display: flex;
   gap: 0.8rem;
   justify-content: center;
 }
 
-section {
-  margin: 1.4rem 0;
+.modalBody {
+  border-top: .1rem solid var(--lightestGrey);
+	border-bottom: .1rem solid var(--lightestGrey);
+	font-size: 1rem;
 }
 
-.backDrop {
+.modalBackDrop {
   background: rgba(63, 61, 61, 0.692);
   height: 100%;
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -37,7 +42,7 @@ section {
   cursor: pointer;
 }
 
-@keyframes slidein {
+@keyframes slideIn {
   from {
     margin-left: -100%;
   }
@@ -47,9 +52,23 @@ section {
   }
 }
 
-@media screen and (min-width: 667px) {
-  .wrapper {
-    width: 66%;
+@keyframes slideDown {
+  from {
+    margin-top: -100%;
   }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .modalWrapper {
+		height: auto;
+    left: calc(50% - 25rem);
+    top: auto;
+		width: 50rem;
+		animation-name: slideDown;
+	}
 }
 
