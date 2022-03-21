@@ -10,7 +10,7 @@ const Dashboard = () => {
   const showModal = useAppSelector((state) => state.showModal.isOpen)
   const dispatch = useAppDispatch()
 
-  const onOpenModal = (event: React.MouseEvent<HTMLInputElement>): void => {
+  const onOpenModal = (event: React.MouseEvent): void => {
     event.preventDefault()
     window.scrollTo(0, 0)
     dispatch(show(true))

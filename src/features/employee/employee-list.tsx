@@ -15,17 +15,18 @@ const EmployeeList = () => {
   useEffect(() => {
     return () => {
       setSelectedEmployee(null)
+      setShowModal(false)
     }
   }, [])
 
-  const onOpenModal = (event: React.MouseEvent<HTMLInputElement>, employee: Employee): void => {
+  const onOpenModal = (event: React.MouseEvent, employee: Employee): void => {
     event.preventDefault()
     window.scrollTo(0, 0)
     setSelectedEmployee(employee)
     setShowModal(true)
   }
 
-  const onCloseModal = (event: React.MouseEvent<HTMLInputElement>): void => {
+  const onCloseModal = (event: React.MouseEvent): void => {
     event.preventDefault()
     setSelectedEmployee(null)
     setShowModal(false)

@@ -1,20 +1,20 @@
-import React, { ReactNode, useEffect, KeyboardEvent } from 'react'
+import React, { ReactNode } from 'react'
 import CustomButton from '../custom-button/custom-button'
 import styles from './modal.module.css'
 
 export interface ModalProps {
   children: ReactNode,
   modalTitle: string
-  onCancel: (event: React.MouseEvent<HTMLInputElement>) => void
-  onOK?: (event: React.MouseEvent<HTMLInputElement>) => void
-  onSubmit?: (event: React.MouseEvent<HTMLInputElement>) => void
+  onCancel: React.MouseEventHandler
+  onOK?: React.MouseEventHandler
+  onSubmit?: React.MouseEventHandler
 }
 
 export const Modal: React.FC<ModalProps> = ({ modalTitle, onCancel, onOK, onSubmit, children }: ModalProps) => {
 
   return (
     <>
-      <div className={styles.modalBackDrop} onClick={onCancel}></div>
+      <div className={styles.modalBackDrop} onClick={onCancel} aria-disabled></div>
       <div className={styles.modalWrapper}>
         <div className={styles.modalContent}>
           <h4 className={styles.modalHeader}>{modalTitle}</h4>

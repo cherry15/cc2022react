@@ -51,6 +51,7 @@ export const EmployeeForm = () => {
         <input
           className='input'
           id='name'
+          autoFocus
           {...register('name', { required: true, maxLength: 20 })}
         />
         {errors.name && <span className='error'>Name is required</span>}

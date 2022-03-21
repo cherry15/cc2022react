@@ -2,7 +2,7 @@ import React from 'react'
 import './custom-button.css'
 
 export interface ButtonProps {
-  onClick(event: React.MouseEvent<HTMLInputElement>): void
+  onClick: React.MouseEventHandler
   buttonStyle?: 'default' | 'cancel' | 'delete' | 'ok'
   type?: string
   aria?: string
