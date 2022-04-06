@@ -12,7 +12,7 @@ I've also tried to be mindfull of Kent C Dodds Testing Trophy, testing what the 
 
 I have discovered some limitations of CSS Modules with a dynamic active class so have reverted the CSS to regular CSS, there's probably a solution to this but I don't know it yet. Normally I would use SCSS for CSS but the create react app doesn't recommend this approach. 
 
-Although I know how to lazy load components I haven't done this because at the time it was an experimental feature, neither have I used Suspense for the same reason.
+Although I have learnt how to lazy load components I haven't done this because at the time it was an experimental feature, neither have I used Suspense for the same reason.
 
 ## Available Scripts
 
