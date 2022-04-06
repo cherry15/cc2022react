@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 It uses [MSW](https://mswjs.io/) for mocking and testing purposes. I've experimented with putting the components in a features folder and 
 the views in a pages folder, the unit tests live alongside the feature that uses them.
 
-It demonstrates the use of RTK Query with typescript and unit tests. 
+It demonstrates the use of [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) with typescript and unit tests. 
 
 It also has some form validation and a number of other features. 
 
