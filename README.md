@@ -14,7 +14,17 @@ I have discovered some limitations of CSS Modules with a dynamic active class so
 
 Although I have learnt how to lazy load components I haven't done this because at the time it was an experimental feature, neither have I used Suspense for the same reason.
 
-You will need to initialise MSW, in the project directory run:
+### Running the App
+
+In the command prompt or terminal clone the app
+
+### `git clone https://github.com/cherry15/cc2022react.git`
+
+### `cd cc2022react`
+
+### `npm i`
+
+You will also need to initialise MSW, in the project directory run:
 
 ### `npx msw init public/ --save`
 
