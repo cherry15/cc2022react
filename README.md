@@ -18,9 +18,9 @@ Although I have learnt how to lazy load components I haven't done this because a
 
 In the command prompt or terminal clone the app
 
-### `git clone https://github.com/cherry15/cc2022react.git`
+#### `git clone https://github.com/cherry15/cc2022react.git`
 
-### `cd cc2022react`
+##### `cd cc2022react`
 
 ### `npm i`
 
