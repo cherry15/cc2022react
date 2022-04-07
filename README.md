@@ -20,7 +20,11 @@ In the command prompt or terminal clone the app
 
 #### `git clone https://github.com/cherry15/cc2022react.git`
 
+CD into the directory
+
 #### `cd cc2022react`
+
+And install dependencies
 
 #### `npm i`
 
