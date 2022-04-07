@@ -20,19 +20,19 @@ In the command prompt or terminal clone the app
 
 #### `git clone https://github.com/cherry15/cc2022react.git`
 
-##### `cd cc2022react`
+#### `cd cc2022react`
 
-### `npm i`
+#### `npm i`
 
 You will also need to initialise MSW, in the project directory run:
 
-### `npx msw init public/ --save`
+#### `npx msw init public/ --save`
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -40,6 +40,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+#### `npm test`
 
 Launches the test runner in the interactive watch mode.
