@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 It uses [MSW](https://mswjs.io/) for mocking and testing purposes.
 
-It demonstrates the use of [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) with typescript and unit tests. 
+It demonstrates the use of [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) with typescript and tests. 
 
 It also has some form validation and a number of other features. 
 
