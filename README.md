@@ -14,7 +14,7 @@ I have discovered some limitations of CSS Modules with a dynamic active class so
 
 Although I have learnt how to lazy load components I haven't done this because at the time it was an experimental feature, neither have I used Suspense for the same reason.
 
-### Running the App
+## Running the App
 
 In the command prompt or terminal clone the app
 
@@ -32,7 +32,7 @@ You will also need to initialise MSW, in the project directory run:
 
 In the project directory, you can run:
 
-### `npm start`
+## `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -40,6 +40,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## `npm test`
 
 Launches the test runner in the interactive watch mode.
